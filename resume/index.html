@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>杨力诚 - 个人简历</title>
+  <meta name="description" content="杨力诚 - 以音乐学的敏锐感知力驾驭AI，做有审美的内容创作者">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/components.css">
+</head>
+<body>
+  <!-- Loading / 光线撕裂开场 -->
+  <div class="loading-overlay" id="loadingOverlay">
+    <div class="tear-half tear-half-top" id="tearHalfTop"></div>
+    <div class="tear-half tear-half-bottom" id="tearHalfBottom"></div>
+    <div class="tear-light-beam" id="tearLightBeam"></div>
+    <div class="loading-spinner" id="loadingSpinner"></div>
+    <div class="tear-particles" id="tearParticles"></div>
+  </div>
+
+  <!-- Particle Canvas -->
+  <canvas id="particles-canvas"></canvas>
+
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <span class="nav-logo">杨力诚</span>
+      <ul class="nav-menu">
+        <li><a href="#hero" class="nav-link active">首页</a></li>
+        <li><a href="#about" class="nav-link">关于</a></li>
+        <li><a href="#skills" class="nav-link">技能</a></li>
+        <li><a href="#timeline" class="nav-link">经历</a></li>
+        <li><a href="#honors" class="nav-link">荣誉</a></li>
+        <li><a href="#contact" class="nav-link">联系</a></li>
+        <li>
+          <button class="theme-toggle" aria-label="切换主题">
+            <span class="theme-toggle-thumb">
+              <svg viewBox="0 0 20 20"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill="currentColor"/></svg>
+            </span>
+          </button>
+        </li>
+      </ul>
+      <button class="menu-toggle" aria-label="菜单">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <main>
+    <!-- Hero -->
+    <section id="hero" class="section hero">
+      <div class="hero-glow"></div>
+      <div class="hero-glow-2"></div>
+      <div class="hero-content">
+        <div class="hero-avatar">
+          <img src="assets/1.jpg" alt="杨力诚">
+        </div>
+        <h1 class="hero-title"><span class="artistic-title">杨力诚</span></h1>
+        <p class="hero-subtitle" id="tagline"></p>
+        <div class="hero-contact">
+          <span class="hero-contact-item">
+            <svg viewBox="0 0 20 20"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/></svg>
+            13263126740
+          </span>
+          <span class="hero-contact-item">
+            <svg viewBox="0 0 20 20"><path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/><path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/></svg>
+            （待补充）
+          </span>
+        </div>
+        <div class="traits-container">
+          <span class="trait-tag">跨学科思维</span>
+          <span class="trait-tag">快速学习</span>
+          <span class="trait-tag">审美判断力</span>
+          <span class="trait-tag">内容节奏感</span>
+          <span class="trait-tag">即兴应变</span>
+        </div>
+      </div>
+      <div class="scroll-indicator">
+        <svg viewBox="0 0 30 30"><path d="M15 20a1 1 0 01-.707-.293l-6-6a1 1 0 011.414-1.414L15 17.586l5.293-5.293a1 1 0 011.414 1.414l-6 6A1 1 0 0115 20z"/></svg>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="section">
+      <div class="container">
+        <h2 class="section-title"><span class="artistic-title-subtle">关于我</span></h2>
+        <p class="section-subtitle">以音乐学的敏锐感知力驾驭AI，做有审美的内容创作者</p>
+        <div class="about-container">
+          <div class="about-text">
+            <p class="about-bio">
+              音乐学专业出身，准大一新生，即将进入中国音乐学院本科阶段学习。
+            </p>
+            <p class="about-bio">
+              持有阿里云达摩院人工智能训练师（初级）证书及相关技能证书共计10项，具备AI内容创作的全流程能力。
+            </p>
+            <p class="about-bio">
+              跨学科思维，善于在多领域知识的交叉碰撞中构建对音乐的立体化认知。
+            </p>
+            <div class="personality-section">
+              <p class="personality-label">个人特质</p>
+              <div class="traits-container" style="justify-content: flex-start;">
+                <span class="trait-tag">跨学科思维</span>
+                <span class="trait-tag">快速学习新工具</span>
+                <span class="trait-tag">天然审美判断力</span>
+              </div>
+            </div>
+          </div>
+          <div class="about-stats">
+            <div class="stat-card">
+              <div class="stat-value">10+</div>
+              <div class="stat-label">技能证书</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-value">3+</div>
+              <div class="stat-label">大型活动主持</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-value">4项</div>
+              <div class="stat-label">奖学金荣誉</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-value">1场</div>
+              <div class="stat-label">学术讲座</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="divider container"></div>
+
+    <!-- Skills -->
+    <section id="skills" class="section">
+      <div class="container">
+        <h2 class="section-title">专业技能</h2>
+        <p class="section-subtitle">音乐学 × AI × 内容创作</p>
+        <div class="skills-container">
+          <div class="skills-rings">
+            <div class="skill-ring-item">
+              <div class="skill-ring-canvas">
+                <canvas></canvas>
+              </div>
+              <span class="skill-name">AI内容创作</span>
+            </div>
+            <div class="skill-ring-item">
+              <div class="skill-ring-canvas">
+                <canvas></canvas>
+              </div>
+              <span class="skill-name">内容运营</span>
+            </div>
+            <div class="skill-ring-item">
+              <div class="skill-ring-canvas">
+                <canvas></canvas>
+              </div>
+              <span class="skill-name">视觉设计</span>
+            </div>
+            <div class="skill-ring-item">
+              <div class="skill-ring-canvas">
+                <canvas></canvas>
+              </div>
+              <span class="skill-name">音乐学素养</span>
+            </div>
+            <div class="skill-ring-item">
+              <div class="skill-ring-canvas">
+                <canvas></canvas>
+              </div>
+              <span class="skill-name">现场表达</span>
+            </div>
+            <div class="skill-ring-item">
+              <div class="skill-ring-canvas">
+                <canvas></canvas>
+              </div>
+              <span class="skill-name">学术写作</span>
+            </div>
+          </div>
+          <div class="divider"></div>
+          <p class="tags-section-title">技术标签</p>
+          <div class="skills-tags">
+            <span class="skill-tag">AI训练</span>
+            <span class="skill-tag">内容运营</span>
+            <span class="skill-tag">微信公众号</span>
+            <span class="skill-tag">视觉设计</span>
+            <span class="skill-tag">音乐学</span>
+            <span class="skill-tag">学术写作</span>
+            <span class="skill-tag">活动主持</span>
+            <span class="skill-tag">钢琴</span>
+            <span class="skill-tag">跨学科</span>
+            <span class="skill-tag">海报设计</span>
+            <span class="skill-tag">PPT制作</span>
+            <span class="skill-tag">视频剪辑</span>
+            <span class="skill-tag">数据分析</span>
+            <span class="skill-tag">公开演讲</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="divider container"></div>
+
+    <!-- Timeline: Education + Experience -->
+    <section id="timeline" class="section">
+      <div class="container">
+        <h2 class="section-title">教育背景</h2>
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-content">
+              <div class="timeline-period">2026 - 至今</div>
+              <h3 class="timeline-title">中国音乐学院</h3>
+              <p class="timeline-subtitle">音乐学专业（民族音乐学理论方向）· 本科</p>
+              <ul class="timeline-list">
+                <li>高考已录取，即将进入本科阶段学习</li>
+              </ul>
+            </div>
+            <div class="timeline-dot"></div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-content">
+              <div class="timeline-period">2020 - 2026</div>
+              <h3 class="timeline-title">中国音乐学院附中</h3>
+              <p class="timeline-subtitle">音乐学专业</p>
+              <ul class="timeline-list">
+                <li>连续两年（2024、2025）获"北京市政府奖学金"</li>
+                <li>连续两年（2024、2025）获评校级"优秀共青团员"</li>
+              </ul>
+            </div>
+            <div class="timeline-dot"></div>
+          </div>
+        </div>
+
+        <div class="divider"></div>
+        <h2 class="section-title">实践经历</h2>
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-content">
+              <div class="timeline-period">2023 - 2025</div>
+              <h3 class="timeline-title">海潮文学社</h3>
+              <p class="timeline-subtitle">文编部部长</p>
+              <ul class="timeline-list">
+                <li>统筹每期主题策划、征稿筛选、内容审校及排版定稿</li>
+                <li>在审校环节建立分级质量检查标准，确保出刊内容整体统一性与文字准确性</li>
+              </ul>
+            </div>
+            <div class="timeline-dot"></div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-content">
+              <div class="timeline-period">2023 - 2025</div>
+              <h3 class="timeline-title">理论作曲学科公众号</h3>
+              <p class="timeline-subtitle">运营编辑</p>
+              <ul class="timeline-list">
+                <li>深度参与学科官方公众号日常运营</li>
+                <li>独立完成内容选题、撰稿、视觉排版与发布全流程</li>
+                <li>持续输出高质量学科动态内容</li>
+              </ul>
+            </div>
+            <div class="timeline-dot"></div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-content">
+              <div class="timeline-period">2023 - 2025</div>
+              <h3 class="timeline-title">校园大型活动主持</h3>
+              <p class="timeline-subtitle">主持人（3场校级活动）</p>
+              <ul class="timeline-list">
+                <li>担任中国传统音乐活态教学音乐会、2024校园歌手大赛、读书堂成果展演主持人</li>
+                <li>累计覆盖师生观众近千人</li>
+                <li>独立撰写差异化主持串词与互动脚本</li>
+                <li>统筹前期彩排、演员对接与音视频协调</li>
+                <li>多次灵活应对流程调整与突发状况</li>
+              </ul>
+            </div>
+            <div class="timeline-dot"></div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-content">
+              <div class="timeline-period">2024年秋季</div>
+              <h3 class="timeline-title">附中学术沙龙</h3>
+              <p class="timeline-subtitle">专题主讲人</p>
+              <ul class="timeline-list">
+                <li>独立策划并主讲历史专题学术讲座，现场听众40余人</li>
+                <li>将学术内容转化为通俗易懂的公开表达</li>
+                <li>设计互动提问环节，现场讨论氛围积极热烈</li>
+              </ul>
+            </div>
+            <div class="timeline-dot"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="divider container"></div>
+
+    <!-- Honors -->
+    <section id="honors" class="section">
+      <div class="container">
+        <h2 class="section-title">荣誉与证书</h2>
+        <p class="section-subtitle">AI + 音乐 + 综合荣誉</p>
+        <div class="honors-grid">
+          <div class="honor-card">
+            <span class="honor-badge">人工智能</span>
+            <h3 class="honor-title">阿里云达摩院人工智能训练师（初级）</h3>
+            <p class="honor-year">2026年 · 及相关技能证书共计10项</p>
+          </div>
+          <div class="honor-card">
+            <span class="honor-badge">综合荣誉</span>
+            <h3 class="honor-title">北京市政府奖学金</h3>
+            <p class="honor-year">2024、2025（连续两年）</p>
+          </div>
+          <div class="honor-card">
+            <span class="honor-badge">综合荣誉</span>
+            <h3 class="honor-title">优秀共青团员</h3>
+            <p class="honor-year">2024、2025（连续两年）</p>
+            <p class="honor-year" style="margin-top: 4px;">中国音乐学院附中</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="divider container"></div>
+
+    <!-- Gallery Carousel -->
+    <section id="gallery" class="carousel-section">
+      <div class="container">
+        <h2 class="section-title">我的瞬间</h2>
+        <p class="section-subtitle">滑动浏览更多精彩瞬间</p>
+        <div class="carousel-container">
+          <div class="carousel-track">
+            <div class="carousel-slide"><img src="assets/2.jpg" alt="作品 2" loading="lazy"></div>
+            <div class="carousel-slide"><img src="assets/3.jpg" alt="作品 3" loading="lazy"></div>
+            <div class="carousel-slide"><img src="assets/4.jpg" alt="作品 4" loading="lazy"></div>
+            <div class="carousel-slide"><img src="assets/6.jpg" alt="作品 6" loading="lazy" style="object-position: 70% center;"></div>
+          </div>
+          <button class="carousel-btn carousel-prev" aria-label="上一张">
+            <svg viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6" stroke="white" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <button class="carousel-btn carousel-next" aria-label="下一张">
+            <svg viewBox="0 0 24 24"><path d="M9 18l6-6-6-6" stroke="white" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <div class="carousel-dots">
+            <span class="carousel-dot active" data-index="0"></span>
+            <span class="carousel-dot" data-index="1"></span>
+            <span class="carousel-dot" data-index="2"></span>
+            <span class="carousel-dot" data-index="3"></span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="divider container"></div>
+
+    <!-- Hobbies -->
+    <section id="hobbies" class="section">
+      <div class="container">
+        <h2 class="section-title">个人特长与兴趣爱好</h2>
+        <div class="skills-container">
+          <div class="skills-tags" style="justify-content: center;">
+            <span class="skill-tag" style="font-size: 0.95rem; padding: 10px 20px;">跨领域学习（历史、哲学、科技）</span>
+            <span class="skill-tag" style="font-size: 0.95rem; padding: 10px 20px;">自幼学习钢琴·持续演奏</span>
+            <span class="skill-tag" style="font-size: 0.95rem; padding: 10px 20px;">音乐会与话剧演出</span>
+            <span class="skill-tag" style="font-size: 0.95rem; padding: 10px 20px;">现场艺术感知力</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="section">
+      <div class="container">
+        <h2 class="section-title">联系方式</h2>
+        <div class="contact-container">
+          <p class="contact-text">期待与您交流，共同探索音乐与AI的无限可能</p>
+          <div class="contact-info">
+            <div class="contact-item">
+              <div class="contact-icon-wrap">
+                <svg viewBox="0 0 20 20" style="width: 24px; height: 24px; fill: var(--accent-primary);"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/></svg>
+              </div>
+              <span class="contact-label">电话</span>
+              <span class="contact-value">13263126740</span>
+            </div>
+            <div class="contact-item">
+              <div class="contact-icon-wrap">
+                <svg viewBox="0 0 20 20" style="width: 24px; height: 24px; fill: var(--accent-primary);"><path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/><path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/></svg>
+              </div>
+              <span class="contact-label">邮箱</span>
+              <span class="contact-value">（待补充）</span>
+            </div>
+            <div class="contact-item">
+              <div class="contact-icon-wrap">
+                <svg viewBox="0 0 20 20" style="width: 24px; height: 24px; fill: var(--accent-primary);"><path d="M9 12a1 1 0 102 0V6.414l1.293 1.293a1 1 0 001.414-1.414l-3-3a1 1 0 00-1.414 0l-3 3a1 1 0 001.414 1.414L9 6.414V12z"/><path d="M4 15a1 1 0 011-1h10a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1v-2z"/></svg>
+              </div>
+              <span class="contact-label">微信</span>
+              <span class="contact-value">（待补充）</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="container">
+        <p>&copy; 2026 杨力诚 · 用心构建有审美的数字表达</p>
+      </div>
+    </footer>
+  </main>
+
+  <!-- Back to Top -->
+  <button class="back-to-top" aria-label="回到顶部">
+    <svg viewBox="0 0 24 24"><path d="M12 4a1 1 0 01.707.293l6 6a1 1 0 01-1.414 1.414L13 7.414V19a1 1 0 11-2 0V7.414l-4.293 4.293a1 1 0 01-1.414-1.414l6-6A1 1 0 0112 4z"/></svg>
+  </button>
+
+  <!-- Scripts -->
+  <script src="js/config.js"></script>
+  <script src="js/utils.js"></script>
+  <script src="js/particles.js"></script>
+  <script src="js/typing.js"></script>
+  <script src="js/scroll.js"></script>
+  <script src="js/ring-chart.js"></script>
+  <script src="js/card-tilt.js"></script>
+  <script src="js/carousel.js"></script>
+  <script src="js/tear-animation.js"></script>
+  <script src="js/theme.js"></script>
+  <script src="js/nav.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

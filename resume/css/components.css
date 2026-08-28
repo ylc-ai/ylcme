@@ -1,0 +1,184 @@
+/* Hero 头部装饰光环 */
+.hero-glow {
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(108, 92, 231, 0.08), transparent 70%);
+  top: -200px;
+  right: -200px;
+  pointer-events: none;
+  animation: pulse 4s ease-in-out infinite;
+}
+
+.hero-glow-2 {
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(0, 210, 255, 0.06), transparent 70%);
+  bottom: -100px;
+  left: -100px;
+  pointer-events: none;
+  animation: pulse 6s ease-in-out infinite reverse;
+}
+
+/* 个人特质标签 */
+.traits-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 16px;
+  justify-content: center;
+}
+
+.trait-tag {
+  padding: 6px 16px;
+  background: transparent;
+  border: 1px solid var(--accent-primary);
+  border-radius: 20px;
+  font-size: 0.85rem;
+  color: var(--accent-primary);
+  transition: background var(--transition-fast), color var(--transition-fast);
+}
+
+.trait-tag:hover {
+  background: var(--accent-primary);
+  color: white;
+}
+
+/* 分隔线装饰 */
+.divider {
+  height: 1px;
+  background: var(--border-color);
+  margin: 60px 0;
+  position: relative;
+}
+
+.divider::after {
+  content: '◆';
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background: var(--bg-primary);
+  padding: 0 16px;
+  color: var(--accent-primary);
+  font-size: 0.7rem;
+  transition: background var(--transition-normal);
+}
+
+/* 徽章 */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 12px;
+  background: var(--accent-gradient);
+  color: white;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+/* 号码牌（统计数字） */
+.hero-numbers {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin-top: 32px;
+}
+
+.hero-number-item {
+  text-align: center;
+}
+
+.hero-number-value {
+  font-size: 2rem;
+  font-weight: 700;
+  background: var(--accent-gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.hero-number-label {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  margin-top: 4px;
+}
+
+/* 个性标签区 */
+.personality-section {
+  margin-top: 32px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border-color);
+}
+
+.personality-label {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  margin-bottom: 12px;
+  font-weight: 500;
+}
+
+/* Section 副标题 */
+.section-subtitle {
+  text-align: center;
+  font-size: 1.05rem;
+  color: var(--text-secondary);
+  margin-top: -2rem;
+  margin-bottom: 3rem;
+}
+
+/* 技能标签组标题 */
+.tags-section-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 16px;
+}
+
+/* 项目卡片光晕 */
+.project-card-glow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  border-radius: var(--radius-lg);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  background: radial-gradient(circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(108, 92, 231, 0.1), transparent 60%);
+}
+
+.project-card:hover .project-card-glow {
+  opacity: 1;
+}
+
+/* 荣誉卡片网格 */
+.honors-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+}
+
+/* 联系图标 */
+.contact-icon-wrap {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--bg-tertiary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 8px;
+  border: 1px solid var(--border-color);
+  transition: border-color var(--transition-fast), background var(--transition-fast);
+}
+
+.contact-item:hover .contact-icon-wrap {
+  border-color: var(--accent-primary);
+  background: var(--bg-secondary);
+}
